@@ -3,8 +3,8 @@ from django.db import models
 
 
 class Food(models.Model):
-    name = models.CharField(max_length=256)
-    owner = models.ForeignKey(
+    dish = models.CharField(max_length=256)
+    customer = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, null=True, blank=True
     )
     description = models.TextField(default="", null=True, blank=True)
